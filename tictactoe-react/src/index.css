@@ -1,0 +1,35 @@
+.status {
+  font-size: 2rem;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 10px 0;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mengatur gaya untuk elemen .square */
+.square {
+  width: 100px; /* Lebar elemen square */
+  height: 100px; /* Tinggi elemen square */
+  display: flex;
+  align-items: center; /* Mengatur konten elemen ke tengah secara vertikal */
+  justify-content: center; /* Mengatur konten elemen ke tengah secara horizontal */
+  background-color: #e0e0e0; /* Warna latar belakang elemen square */
+  font-size: 24px; /* Ukuran font teks dalam elemen square */
+  font-weight: bold; /* Ketebalan font teks */
+  margin: 5px; /* Menambahkan margin di sekitar elemen square */
+}
+
+.game-info ul {
+  text-align: end;
+  list-style: none;
+  margin-top: -300px;
+  margin-right: 10%;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 4px;
+}
