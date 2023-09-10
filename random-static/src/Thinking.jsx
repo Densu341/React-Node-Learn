@@ -3,11 +3,12 @@ import {
   IconBrandGoogle,
   IconBrandTwitter,
 } from "@tabler/icons-react";
-import clsx from "clsx";
+import Button from "./components/Button";
+import Card from "./components/Card";
 
 export default function () {
   return (
-    <div className="bg-slate-900 place-content-center min-h-screen grid">
+    <div className="bg-slate-100 place-content-center min-h-screen grid">
       <div className="flex gap-x-2">
         <Button type="submit" onClick={() => console.log("Login With Twitter")}>
           <IconBrandTwitter />
@@ -30,21 +31,14 @@ export default function () {
           Login
         </Button>
       </div>
+      <Card>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In alias
+        deserunt, deleniti saepe quae nostrum officiis vel hic quibusdam quas
+        cumque animi quod beatae porro odio laudantium? Cum iure modi iusto
+        excepturi id numquam praesentium similique, exercitationem vel ullam
+        nam? Reiciendis doloremque tempore ex harum veritatis temporibus
+        blanditiis incidunt sed!
+      </Card>
     </div>
-  );
-}
-
-function Button(props) {
-  const { className = "bg-blue-600", children, text } = props;
-  return (
-    <button
-      {...props}
-      className={clsx(
-        className,
-        "[&>svg]:w-5 [&>svg]:h-5 [&>svg]:stroke-1 flex items-center gap-x-2 rounded-lg px-4 py-2 text-white"
-      )}
-    >
-      {text || children}
-    </button>
   );
 }
