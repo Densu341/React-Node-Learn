@@ -24,7 +24,7 @@
   margin: 5px; /* Menambahkan margin di sekitar elemen square */
 }
 
-.game-info ul {
+.game-info ol {
   text-align: end;
   list-style: none;
   margin-top: -300px;

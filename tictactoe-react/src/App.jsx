@@ -113,7 +113,7 @@ export default function Game() {
     }
     return (
       <li key={move}>
-        <span onClick={() => jumpTo(move)}>{description}</span>
+        <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
@@ -124,7 +124,7 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
-        <ul>{moves}</ul>
+        <ol>{moves}</ol>
       </div>
     </div>
   );
