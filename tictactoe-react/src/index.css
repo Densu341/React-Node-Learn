@@ -1,35 +1,26 @@
-.status {
-  font-size: 2rem;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: 10px 0;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: monospace;
+  background-color: black;
+  color: white;
 }
 
-.board-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-/* Mengatur gaya untuk elemen .square */
-.square {
-  width: 100px; /* Lebar elemen square */
-  height: 100px; /* Tinggi elemen square */
-  display: flex;
-  align-items: center; /* Mengatur konten elemen ke tengah secara vertikal */
-  justify-content: center; /* Mengatur konten elemen ke tengah secara horizontal */
-  background-color: #e0e0e0; /* Warna latar belakang elemen square */
-  font-size: 24px; /* Ukuran font teks dalam elemen square */
-  font-weight: bold; /* Ketebalan font teks */
-  margin: 5px; /* Menambahkan margin di sekitar elemen square */
-}
-
-.game-info ol {
-  text-align: end;
-  list-style: none;
-  margin-top: -300px;
-  margin-right: 10%;
-  font-size: 1rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-bottom: 4px;
+button {
+  font-family: inherit;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  color: black;
+  border: none;
+  font-weight: 600;
+  background-color: #e7da3d;
 }
