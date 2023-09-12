@@ -17,7 +17,7 @@
 }
 
 .timer-row {
-  width: 210px;
+  width: 250px;
   height: 120px;
   font-weight: 500;
   border-radius: 7px;
@@ -41,7 +41,7 @@
   font-size: 1.8rem;
   font-weight: 500;
   border: none;
-  width: 35px;
+  width: 50px;
   border-bottom: 2px solid rgb(97, 97, 97);
 }
 
