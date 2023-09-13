@@ -3,6 +3,7 @@
 import PlaceContentCenter from "./components/PlaceContentCenter.jsx";
 import Button from "./components/Button.jsx";
 import { useState } from "react";
+import Counter from "./components/Counter.jsx";
 
 // function Canvas() {
 //   const pos1 = usePointerPosition();
@@ -41,27 +42,9 @@ import { useState } from "react";
 // }
 
 export default function App() {
-  const [count, setCount] = useState(0);
-  function handleClick() {
-    // const nextCount = count + 1;
-    setCount((prevState) => prevState + 1);
-    // console.log({ count, nextCount });
-  }
   return (
     <PlaceContentCenter>
-      <h1 className="text-5xl font-bold text-center">{count}</h1>
-      <div className="mt-5 flex items-center gap-2">
-        <Button onClick={handleClick}>+1</Button>
-        <Button
-          onClick={() => {
-            handleClick();
-            handleClick();
-            handleClick();
-          }}
-        >
-          +3
-        </Button>
-      </div>
+      <Counter initialValue={0}></Counter>
     </PlaceContentCenter>
   );
 }
