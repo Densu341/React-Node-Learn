@@ -1,0 +1,23 @@
+:root {
+  --primary-color: #f6f8fd;
+  --secondary-color: #dc3545;
+  --color-text: #231942;
+  --navbar-color: #ffffff;
+  --navbar-color-text: #000000;
+}
+
+.navbar {
+  width: 100%;
+  color: var(--navbar-color);
+}
+
+.navbar .nav-link a {
+  text-decoration: none;
+  padding: 5px 10px;
+  font-weight: 500;
+  color: var(--navbar-color-text);
+}
+
+.navbar .nav-link a:hover {
+  color: var(--secondary-color);
+}
