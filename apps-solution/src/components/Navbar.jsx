@@ -23,7 +23,7 @@ function Navbar() {
   }, []);
   return (
     <nav
-      className={`bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 font-poppins ${
+      className={`bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 font-poppins py-3 ${
         isSticky ? "sticky top-0 z-50" : ""
       }`}
     >
@@ -71,7 +71,7 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="#"
+                href="#services"
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Services
@@ -79,15 +79,15 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="#"
+                href="#portfolio"
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
-                Product
+                Portfolio
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="#about"
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 About
@@ -95,7 +95,7 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="#"
+                href="#contact-us"
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Contact
