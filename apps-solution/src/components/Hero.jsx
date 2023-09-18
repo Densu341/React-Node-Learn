@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="bg-gradient-to-r from-gray-800 via-gray-800 to-slate-900">
+    <section className="gradient-background">
       <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
           Bringing Ideas to Life Through Software
