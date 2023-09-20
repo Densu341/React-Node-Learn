@@ -64,9 +64,9 @@ function Navbar() {
                   href={item.href}
                   className={`block py-2 pl-3 pr-4 text-${
                     item.isDark ? "white" : "gray-900"
-                  } rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ${
+                  } rounded hover:bg-gray-800 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ${
                     item.isDark
-                      ? "dark:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      ? "dark:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                       : ""
                   }`}
                   aria-current="page"
