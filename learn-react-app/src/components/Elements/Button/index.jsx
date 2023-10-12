@@ -3,7 +3,7 @@ const Button = (props) => {
   return (
     <button
       type="submit"
-      className={` ${variant} text-white font-bold py-2 px-4 rounded`}
+      className={` ${variant} text-white font-bold py-2 px-4 rounded w-full`}
     >
       {children}
     </button>

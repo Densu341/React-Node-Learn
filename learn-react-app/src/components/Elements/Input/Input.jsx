@@ -7,6 +7,7 @@ export const Input = (props) => {
       type={type}
       placeholder={placeholder}
       name={name}
+      id={name}
     />
   );
 };
