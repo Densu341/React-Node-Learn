@@ -8,6 +8,8 @@ import RegisterPage from "./pages/Register";
 import ErrorPage from "./Pages/404";
 import ProductPage from "./Pages/products";
 import Blog from "./Pages/blog";
+import CarouselPage from "./Pages/carousel";
+import Sidebar from "./Pages/sidebar";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
   {
     path: "/products",
     element: <ProductPage />,
+  },
+  {
+    path: "/carousel",
+    element: <CarouselPage />,
+  },
+  {
+    path: "/sidebar",
+    element: <Sidebar />,
   },
 ]);
 

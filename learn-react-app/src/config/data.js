@@ -85,3 +85,13 @@ export const blogList = [
     cover: "/images/Synthwave-Postmodern.jpg",
   },
 ];
+
+export const image = [
+  {
+    img1: "/images/graphic-design-trends.png",
+    img2: "/images/make-it-personal.jpg",
+    img3: "/images/Synthwave-Postmodern.jpg",
+    img4: "/images/Purple-Combination-colors-graphic-design-predictions-1024x576-1024x576.jpg",
+    img5: "/images/designer-1.jpg",
+  },
+];

@@ -1,9 +1,12 @@
-import React from 'react';
-import './styles.css';
+import React from "react";
 
 const EmptyList = () => (
-  <div className='emptyList-wrap'>
-    <img src='/assets/images/13525-empty.gif' alt='empty' />
+  <div className="flex justify-center">
+    <img
+      src="/images/13525-empty.gif"
+      alt="empty"
+      className="max-w-sm w-full"
+    />
   </div>
 );
 
