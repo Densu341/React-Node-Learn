@@ -1,7 +1,6 @@
 import CardProduct from "../components/Fragments/CardProduct";
 import { products } from "../config/products";
 import Button from "../components/Elements/Button";
-import Counter from "../components/Fragments/Counter";
 
 const email = localStorage.getItem("email");
 const ProductPage = () => {
@@ -31,9 +30,6 @@ const ProductPage = () => {
             <CardProduct.Footer price={product.price} />
           </CardProduct>
         ))}
-      </div>
-      <div className="">
-        <Counter></Counter>
       </div>
     </>
   );

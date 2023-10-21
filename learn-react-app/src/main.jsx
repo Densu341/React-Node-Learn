@@ -10,6 +10,7 @@ import ProductPage from "./Pages/products";
 import Blog from "./Pages/blog";
 import CarouselPage from "./Pages/carousel";
 import Sidebar from "./Pages/sidebar";
+import Gallery from "./Pages/learnState";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/sidebar",
     element: <Sidebar />,
+  },
+  {
+    path: "/state",
+    element: <Gallery />,
   },
 ]);
 
