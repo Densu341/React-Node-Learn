@@ -4,7 +4,7 @@ const CardProduct = (props) => {
   return (
     <>
       <div className="flex justify-center bg-slate-700 py-5">
-        <div className="w-full max-w-sm border border-gray-200 rounded-lg shadow">
+        <div className="w-full max-w-sm border border-gray-200 rounded-lg shadow flex flex-col justify-between">
           {children}
         </div>
       </div>
@@ -12,38 +12,34 @@ const CardProduct = (props) => {
   );
 };
 
-const Header = () => {
+const Header = (props) => {
+  const { picture } = props;
   return (
     <a href="">
-      <img
-        src="/images/shoes1.jpg"
-        alt="product"
-        className="p-8 rounded-t-lg"
-      />
+      <img src={picture} alt="product" className="p-8 rounded-lg" />
     </a>
   );
 };
 
-const Body = () => {
+const Body = (props) => {
+  const { title, description } = props;
   return (
-    <div className="px-8 pb-4">
+    <div className="px-8 pb-4 h-full">
       <a href="">
         <h5 className="text-xl font-semibold tracking-tight text-white">
-          Product Name
+          {title}
         </h5>
-        <p className="text-m text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          nesciunt mollitia reiciendis dolore repudiandae fugit.
-        </p>
+        <p className="text-m text-white">{description}</p>
       </a>
     </div>
   );
 };
 
-const Footer = () => {
+const Footer = (props) => {
+  const { price } = props;
   return (
     <div className="flex items-center justify-between px-5 py-4">
-      <span className="text-white text-xl font-semibold">Rp1.000.000</span>
+      <span className="text-white text-xl font-semibold">{price}</span>
       <Button variant="bg-blue-700">Add to Cart</Button>
     </div>
   );
