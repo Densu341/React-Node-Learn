@@ -9,7 +9,7 @@ const Button = (props) => {
     <button
       type={type}
       className={` ${variant} text-white font-bold py-2 px-4 rounded`}
-      onClick={() => onClick()}
+      onClick={onClick}
     >
       {children}
     </button>
