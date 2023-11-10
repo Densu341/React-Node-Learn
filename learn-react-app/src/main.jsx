@@ -11,6 +11,7 @@ import Blog from "./Pages/blog";
 import CarouselPage from "./Pages/carousel";
 import Sidebar from "./Pages/sidebar";
 import Gallery from "./Pages/learnState";
+// import FlipPage from "./Pages/flipbook/flippage";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
     path: "/state",
     element: <Gallery />,
   },
+  // {
+  //   path: "/flipbook",
+  //   element: <FlipPage />,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

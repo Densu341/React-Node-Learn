@@ -38,6 +38,7 @@ const ProductPage = () => {
       setCart((cart) => [...cart, { id, qty: 1 }]);
     }
   };
+
   return (
     <>
       <div className="w-full bg-blue-600 py-4 px-6 flex justify-end gap-6">
@@ -69,25 +70,24 @@ const ProductPage = () => {
               const product = products.find(
                 (product) => product.id === item.id
               );
+              const uniqueKey = `item-${item.id}`;
               return (
-                <>
-                  <tr key={item.id}>
-                    <td>{product.title}</td>
-                    <td>
-                      {product.price.toLocaleString("id-ID", {
-                        style: "currency",
-                        currency: "IDR",
-                      })}
-                    </td>
-                    <td>{item.qty}</td>
-                    <td>
-                      {(product.price * item.qty).toLocaleString("id-ID", {
-                        style: "currency",
-                        currency: "IDR",
-                      })}
-                    </td>
-                  </tr>
-                </>
+                <tr key={uniqueKey}>
+                  <td>{product.title}</td>
+                  <td>
+                    {product.price.toLocaleString("id-ID", {
+                      style: "currency",
+                      currency: "IDR",
+                    })}
+                  </td>
+                  <td>{item.qty}</td>
+                  <td>
+                    {(product.price * item.qty).toLocaleString("id-ID", {
+                      style: "currency",
+                      currency: "IDR",
+                    })}
+                  </td>
+                </tr>
               );
             })}
             <tr>

@@ -2,13 +2,11 @@ import Button from "../Elements/Button";
 const CardProduct = (props) => {
   const { children } = props;
   return (
-    <>
-      <div className="flex justify-center pb-4">
-        <div className="w-full max-w-sm border border-gray-200 rounded-lg shadow flex flex-col justify-between bg-slate-700 mx-2">
-          {children}
-        </div>
+    <div className="flex justify-center pb-4">
+      <div className="w-full max-w-sm border border-gray-200 rounded-lg shadow flex flex-col justify-between bg-slate-700 mx-2">
+        {children}
       </div>
-    </>
+    </div>
   );
 };
 
