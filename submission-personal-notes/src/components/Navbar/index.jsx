@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 
-function Navbar() {
-  const [searchKeyword, setSearchKeyword] = useState("");
+function Navbar({ onSearch }) {
+  const [searchText, setSearchText] = useState("");
 
+  const handleChange = (e) => {
+    const keyword = e.target.value;
+    setSearchText(keyword);
+    onSearch(keyword);
+  };
   return (
     <div className="navbar">
       <div className="brand">
@@ -11,9 +16,9 @@ function Navbar() {
       <div className="search">
         <input
           type="text"
-          placeholder="Telusuri catatan Anda"
-          value={searchKeyword}
-          onChange={(e) => setSearchKeyword(e.target.value)}
+          placeholder="Cari catatan..."
+          value={searchText}
+          onChange={handleChange}
         />
       </div>
     </div>

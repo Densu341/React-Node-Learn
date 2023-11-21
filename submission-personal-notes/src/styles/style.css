@@ -95,25 +95,13 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-left: 10px;
 }
 
 button:hover {
   background-color: #45a049;
 }
 
-/* Responsive Styles */
-@media (max-width: 600px) {
-  .navbar {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .search input {
-    width: 100%;
-  }
-}
-
-/*
 .note-list {
   padding: 20px;
   display: grid;
@@ -130,122 +118,18 @@ button:hover {
   position: relative;
 }
 
-.note-item .content {
-  margin-bottom: 2.5rem;
+.note-list .no-notes {
+  text-align: center;
 }
 
-.note-item .action {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-}
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .navbar {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-.action button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 0.5rem;
+  .search input {
+    width: 100%;
+  }
 }
-
-.content h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.content p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
-
-.content span {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: #666;
-}
-
-.action button:nth-child(1) {
-  background: #2196f3;
-  color: #fff;
-}
-
-.action button:nth-child(2) {
-  background: #f44336;
-  color: #fff;
-}
-
-.action button:hover {
-  opacity: 0.8;
-} */
-/* 
-body {
-  font-family: "Arial", sans-serif;
-  margin: 20px;
-}
-
-h1,
-h2,
-h3 {
-  color: #333;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  border: 1px solid #ccc;
-  margin: 10px 0;
-  padding: 10px;
-}
-
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 8px 16px;
-  margin: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-form {
-  margin-top: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-}
-
-input[type="text"],
-textarea {
-  resize: vertical;
-}
-
-input[type="text"] {
-  height: 40px;
-}
-
-p {
-  margin: 10px 0;
-}
-
-p.no-notes {
-  font-style: italic;
-  color: #777;
-} */

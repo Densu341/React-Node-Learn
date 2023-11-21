@@ -1,64 +1,85 @@
-import React, { useState } from "react";
+import React from "react";
+import Button from "../Button";
 
-const AddNote = () => {
-  const [newNote, setNewNote] = useState({
-    id: +new Date(),
-    title: "",
-    body: "",
-    archived: false,
-    createdAt: new Date().toISOString(),
-  });
+class AddNote extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const addNote = () => {
-    if (newNote.title.trim() !== "") {
-      setNotes([...notes, newNote]);
-      setNewNote({
-        id: +new Date(),
+    this.state = {
+      newNote: {
         title: "",
         body: "",
-        archived: false,
-        createdAt: new Date().toISOString(),
+      },
+    };
+
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleBodyChange = this.handleBodyChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleTitleChange(event) {
+    if (this.state.newNote.title.length < 50) {
+      this.setState(() => {
+        return {
+          newNote: {
+            ...this.state.newNote,
+            title: event.target.value,
+          },
+        };
       });
     }
-  };
+  }
 
-  const handleTitleChange = (e) => {
-    const inputValue = e.target.value;
-    if (inputValue.length <= 50) {
-      setNewNote({ ...newNote, title: inputValue });
-    }
-  };
+  handleBodyChange(event) {
+    this.setState(() => {
+      return {
+        newNote: {
+          ...this.state.newNote,
+          body: event.target.value,
+        },
+      };
+    });
+  }
 
-  const characterCount = 50 - newNote.title.length;
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.onAddNoteHandler(this.state.newNote);
+  }
 
-  return (
-    <div className="container">
-      <h2>Tambah Catatan Baru</h2>
-      <form className="add-note-form">
-        <span className="character-count">
-          {characterCount} karakter tersisa
-        </span>
-        <input
-          className="title-input"
-          type="text"
-          value={newNote.title}
-          onChange={handleTitleChange}
-          placeholder="Judul Catatan"
-        />
+  render() {
+    const maxCharacterCount = 50;
+    const characterCount = maxCharacterCount - this.state.newNote.title.length;
+    return (
+      <div className="container">
+        <h2>Tambah Catatan Baru</h2>
+        <form className="add-note-form" onSubmit={this.handleSubmit}>
+          <span className="character-count">
+            {characterCount} karakter tersisa
+          </span>
+          <input
+            className="title-input"
+            type="text"
+            name="title"
+            value={this.state.newNote.title}
+            onChange={this.handleTitleChange}
+            placeholder="Judul Catatan"
+          />
 
-        <textarea
-          className="body-input"
-          value={newNote.body}
-          onChange={(e) => setNewNote({ ...newNote, body: e.target.value })}
-          placeholder="Isi Catatan"
-        />
+          <textarea
+            className="body-input"
+            name="body"
+            value={this.state.newNote.body}
+            onChange={this.handleBodyChange}
+            placeholder="Isi Catatan"
+          />
 
-        <button type="button" onClick={addNote}>
-          Tambah Catatan
-        </button>
-      </form>
-    </div>
-  );
-};
+          <Button variant="add" type="submit">
+            Tambah Catatan
+          </Button>
+        </form>
+      </div>
+    );
+  }
+}
 
 export default AddNote;
