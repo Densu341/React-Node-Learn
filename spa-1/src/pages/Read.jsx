@@ -8,6 +8,7 @@ import {
 } from "../utils/local-data";
 import { useParams, useNavigate } from "react-router-dom";
 import ButtonAction from "../components/ButtonAction";
+import PropTypes from "prop-types";
 
 const Read = () => {
   const { id } = useParams();
@@ -73,4 +74,7 @@ const Read = () => {
   );
 };
 
+Read.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 export default Read;

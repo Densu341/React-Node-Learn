@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { IoHome, IoArchive, IoAddCircle, IoSettings } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
 import LinkPages from "../LinkPages";
+import PropTypes from "prop-types";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -61,6 +62,11 @@ const Sidebar = () => {
       </div>
     </div>
   );
+};
+
+Sidebar.propTypes = {
+  onMenuClick: PropTypes.func,
+  activeMenu: PropTypes.string,
 };
 
 export default Sidebar;

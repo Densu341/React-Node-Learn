@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GrFormPreviousLink } from "react-icons/gr";
+import PropTypes from "prop-types";
 
 function Error() {
   return (
@@ -26,5 +27,7 @@ function Error() {
     </div>
   );
 }
+
+Error.propTypes = {};
 
 export default Error;

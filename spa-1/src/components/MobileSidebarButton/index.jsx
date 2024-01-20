@@ -1,6 +1,7 @@
 // MobileSidebarButton.jsx
 import React, { useState } from "react";
 import Sidebar from "../Sidebar";
+import PropTypes from "prop-types";
 
 const MobileSidebarButton = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -51,5 +52,7 @@ const MobileSidebarButton = () => {
     </div>
   );
 };
+
+MobileSidebarButton.propTypes = {};
 
 export default MobileSidebarButton;
