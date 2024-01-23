@@ -1,8 +1,11 @@
 import React from "react";
 import ContactList from "../components/ContactList";
 import SearchBar from "../components/SearchBar";
-import { deleteContact, getContacts } from "../utils/data";
+// import { getContacts, deleteContact } from "../utils/data";
 import { useSearchParams } from "react-router-dom";
+import { getContacts, deleteContact } from "../utils/api";
+// import { deleteContact } from "../utils/data";
+import { LocaleConsumer } from "../contexts/LocaleContext";
 
 function HomePageWrapper() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -19,7 +22,7 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      contacts: getContacts(),
+      contacts: [],
       keyword: props.defaultKeyword || "",
     };
 
@@ -27,12 +30,34 @@ class HomePage extends React.Component {
     this.onKeywordChangeHandler = this.onKeywordChangeHandler.bind(this);
   }
 
-  onDeleteHandler(id) {
-    deleteContact(id);
+  async componentDidMount() {
+    const { data } = await getContacts();
 
     this.setState(() => {
       return {
-        contacts: getContacts(),
+        contacts: data,
+      };
+    });
+  }
+
+  // onDeleteHandler(id) {
+  //   deleteContact(id);
+
+  //   this.setState(() => {
+  //     return {
+  //       contacts: getContacts(),
+  //     };
+  //   });
+  // }
+
+  async onDeleteHandler(id) {
+    await deleteContact(id);
+
+    const { data } = await getContacts();
+
+    this.setState(() => {
+      return {
+        contacts: data,
       };
     });
   }
@@ -54,14 +79,23 @@ class HomePage extends React.Component {
         .includes(this.state.keyword.toLowerCase());
     });
     return (
-      <section>
-        <SearchBar
-          keyword={this.state.keyword}
-          keywordChange={this.onKeywordChangeHandler}
-        />
-        <h2>Daftar Kontak</h2>
-        <ContactList contacts={contacts} onDelete={this.onDeleteHandler} />
-      </section>
+      <LocaleConsumer>
+        {({ locale }) => {
+          return (
+            <section>
+              <SearchBar
+                keyword={this.state.keyword}
+                keywordChange={this.onKeywordChangeHandler}
+              />
+              <h2>{locale === "id" ? "Daftar Kontak" : "Contacts List"}</h2>
+              <ContactList
+                contacts={contacts}
+                onDelete={this.onDeleteHandler}
+              />
+            </section>
+          );
+        }}
+      </LocaleConsumer>
     );
   }
 }
