@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropType from "prop-types";
+import LocaleContext from "../../contexts/LocaleContext";
 
 function SearchBar({ keyword, onKeywordChange }) {
+  const { locale } = useContext(LocaleContext);
   return (
     <input
       className="form-control w-full"
       type="search"
-      placeholder="Cari Judul Catatan.."
+      placeholder={locale === "id" ? "Cari Catatan..." : "Search Notes..."}
       value={keyword}
       onChange={(event) => onKeywordChange(event.target.value)}
     ></input>
@@ -14,7 +16,7 @@ function SearchBar({ keyword, onKeywordChange }) {
 }
 
 SearchBar.propType = {
-  keyword: PropType.string.isRequired,
+  keyword: PropType.string,
   onKeywordChange: PropType.func.isRequired,
 };
 

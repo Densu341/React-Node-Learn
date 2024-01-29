@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import useInput from "../../hooks/useInput";
+import LocaleContext from "../../contexts/LocaleContext";
 
 function LoginInput({ login }) {
   const [email, setEmail] = useInput("");
   const [password, setPassword] = useInput("");
+  const { locale } = useContext(LocaleContext);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -22,13 +24,13 @@ function LoginInput({ login }) {
       />
       <input
         className="form-control"
-        placeholder="Password"
+        placeholder={locale === "id" ? "Kata Sandi" : "Password"}
         type="password"
         value={password}
         onChange={setPassword}
       />
       <button className="w-full h-12 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Sign in
+        {locale === "id" ? "Masuk" : "Login"}
       </button>
     </form>
   );

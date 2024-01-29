@@ -9,14 +9,11 @@ const ButtonAction = ({ children, onClick, style, ...props }) => {
   };
 
   let buttonStyle =
-    "m-4 px-4 py-2 rounded-lg text-sm transition ease-in-out duration-150";
+    "px-4 py-2 rounded-lg text-sm transition ease-in-out duration-150";
 
   switch (style) {
     case "save":
       buttonStyle += " bg-green-500 hover:bg-green-600 text-white";
-      break;
-    case "edit":
-      buttonStyle += " bg-blue-500 hover:bg-blue-600 text-white";
       break;
     case "archive":
       buttonStyle += " bg-yellow-500 hover:bg-yellow-600 text-white";

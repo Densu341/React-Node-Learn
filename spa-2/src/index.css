@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 [data-theme="dark"] {
-  @apply bg-slate-800 text-slate-100 hover:text-white;
+  @apply bg-slate-800 text-slate-100;
 }
 
 .form-control {

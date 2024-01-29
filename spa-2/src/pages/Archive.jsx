@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { addNote, getArchivedNotes } from "../utils/network-data";
+import {
+  getArchivedNotes,
+  archiveNote,
+  unarchiveNote,
+} from "../utils/network-data";
 import NotesList from "../components/NoteList";
 import SearchBar from "../components/SearchBar";
+import PropsTypes from "prop-types";
 
 function Archive() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,10 +36,19 @@ function Archive() {
     setSearchParams({ keyword: newKeyword });
   };
 
+  const onArchiveNoteHandler = async (id) => {
+    await archiveNote(id);
+    setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
+  };
+
+  const onUnarchiveNoteHandler = async (id) => {
+    await unarchiveNote(id);
+    setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
+  };
+
   const filteredNotes = notes.filter((note) => {
     return (
-      note.title &&
-      typeof note.title === "string" &&
+      note.archived === true &&
       note.title.toLowerCase().includes(defaultKeyword.toLowerCase())
     );
   });
@@ -45,9 +59,24 @@ function Archive() {
         keyword={defaultKeyword}
         onKeywordChange={onKeywordChangeHandler}
       />
-      {isLoading ? <p>Loading...</p> : <NotesList notes={filteredNotes} />}
+      {isLoading ? (
+        <div className="flex justify-center items-center h-32">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid"></div>
+        </div>
+      ) : (
+        <NotesList
+          notes={filteredNotes}
+          onArchive={onArchiveNoteHandler}
+          onUnarchive={onUnarchiveNoteHandler}
+        />
+      )}
     </section>
   );
 }
+
+Archive.propTypes = {
+  defaultKeyword: PropsTypes.string,
+  onKeywordChange: PropsTypes.func,
+};
 
 export default Archive;

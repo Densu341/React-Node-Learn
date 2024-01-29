@@ -13,7 +13,7 @@ const MobileSidebarButton = () => {
     <div style={{ position: "relative" }}>
       <button
         type="button"
-        className="md:hidden focus:outline-none mx-4 "
+        className="md:hidden focus:outline-none mx-4"
         onClick={toggleSidebar}
       >
         <svg

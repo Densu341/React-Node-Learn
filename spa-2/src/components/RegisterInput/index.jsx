@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import useInput from "../../hooks/useInput";
+import LocaleContext from "../../contexts/LocaleContext";
 
 function RegisterInput({ register }) {
   const [name, setName] = useInput("");
   const [email, setEmail] = useInput("");
   const [password, setPassword] = useInput("");
+  const { locale } = useContext(LocaleContext);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -17,7 +19,7 @@ function RegisterInput({ register }) {
       <input
         className="form-control"
         type="text"
-        placeholder="Nama"
+        placeholder={locale === "id" ? "Nama" : "Name"}
         value={name}
         onChange={setName}
       />
@@ -31,13 +33,13 @@ function RegisterInput({ register }) {
       <input
         className="form-control"
         type="password"
-        placeholder="Password"
+        placeholder={locale === "id" ? "Kata Sandi" : "Password"}
         autoComplete="current-password"
         value={password}
         onChange={setPassword}
       />
       <button className="w-full h-12 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Sign up
+        {locale === "id" ? "Daftar" : "Register"}
       </button>
     </form>
   );
