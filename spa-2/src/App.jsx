@@ -7,6 +7,9 @@ import ToggleTheme from "./components/ToggleTheme";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
+import Sidebar from "./components/Sidebar";
+import Archive from "./pages/Archive";
+import Detail from "./pages/Detail";
 
 const App = () => {
   const { theme } = useTheme();
@@ -20,7 +23,7 @@ const App = () => {
   };
 
   React.useEffect(() => {
-    document.documentElement.setAttribute("isDark", theme);
+    document.documentElement.setAttribute("data-theme", theme);
 
     if (initializing) {
       const fetchData = async () => {
@@ -54,19 +57,25 @@ const App = () => {
           <Navigation logout={onLogout} name={authedUser.name} />
         )}
       </header>
-      <main>
+      <main className="px-4 mx-auto flex h-screen ">
+        <div className="hidden md:block">{authedUser && <Sidebar />}</div>
         <Routes>
-          <Route
-            path="/*"
-            element={
-              authedUser === null ? (
-                <Login loginSuccess={onLoginSuccess} />
-              ) : (
-                <Home />
-              )
-            }
-          />
-          <Route path="/register" element={<Register />} />
+          {!authedUser && (
+            <>
+              <Route
+                path="/*"
+                element={<Login loginSuccess={onLoginSuccess} />}
+              />
+              <Route path="/register" element={<Register />} />
+            </>
+          )}
+          {authedUser && (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/archive" element={<Archive />} />
+              <Route path="/note/:id" element={<Detail />} />
+            </>
+          )}
         </Routes>
       </main>
     </>

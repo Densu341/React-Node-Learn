@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { addNote, getActiveNotes } from "../utils/network-data";
+import { addNote, getArchivedNotes } from "../utils/network-data";
 import NotesList from "../components/NoteList";
 import SearchBar from "../components/SearchBar";
 
-function Home() {
+function Archive() {
   const [isLoading, setIsLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
   const keyword = searchParams.get("keyword") || "";
@@ -14,8 +14,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await getActiveNotes();
-        console.log("Data from API:", data); // Tambahkan baris ini
+        const { data } = await getArchivedNotes();
         setNotes(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -51,4 +50,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Archive;

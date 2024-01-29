@@ -27,11 +27,12 @@ const ToggleTheme = () => {
   };
 
   return (
-    <button
-      onClick={handleToggle}
-      className={`text-slate-600 px-4 py-2 rounded-md hover:bg-${theme}-700`}
-    >
-      {theme === "dark" ? <FaMoon /> : <FaSun />}
+    <button onClick={handleToggle}>
+      {theme === "dark" ? (
+        <FaMoon size={20} className="text-gray-100" />
+      ) : (
+        <FaSun size={20} />
+      )}
     </button>
   );
 };

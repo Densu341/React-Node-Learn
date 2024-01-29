@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-[isDark="dark"] {
-  @apply bg-gray-900 text-white;
+[data-theme="dark"] {
+  @apply bg-slate-800 text-slate-100 hover:text-white;
 }
 
 .form-control {
-  @apply w-full h-12 border border-gray-200 px-3 rounded-lg text-gray-900;
+  @apply w-full h-12 bg-slate-100 border border-slate-200 px-3 rounded-lg text-slate-800;
 }
