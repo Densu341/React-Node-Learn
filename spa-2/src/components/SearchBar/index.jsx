@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import PropType from "prop-types";
+import PropTypes from "prop-types";
 import LocaleContext from "../../contexts/LocaleContext";
 
 function SearchBar({ keyword, onKeywordChange }) {
@@ -15,9 +15,8 @@ function SearchBar({ keyword, onKeywordChange }) {
   );
 }
 
-SearchBar.propType = {
-  keyword: PropType.string,
-  onKeywordChange: PropType.func.isRequired,
+SearchBar.propTypes = {
+  keyword: PropTypes.string.isRequired,
+  onKeywordChange: PropTypes.func.isRequired,
 };
-
 export default SearchBar;

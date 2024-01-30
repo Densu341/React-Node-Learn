@@ -52,7 +52,7 @@ const App = () => {
 
   return (
     <>
-      <header className="py-4">
+      <header className="p-4">
         {authedUser === null ? (
           <nav className="container mx-auto flex justify-between items-center">
             <h1 className="text-3xl font-bold">
